@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="button.css" />
+    <link rel="stylesheet" href="popup.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div>
-      <textarea id="barcodeInput">barcode</textarea>
-      <button id="runInput">run</button>
+    <h1>Barcode simulator</h1>
+    <h2>Enter barcode</h2>
+    <div class="inputDiv">
+      <textarea
+        id="barcodeInput"
+        placeholder="Enter barcode here ..."
+      ></textarea>
+      <button id="runInput" class="launch-btn">run</button>
     </div>
-    <div id="history">
-      <div>
-        <span
-          >(8010)33891104442968AA07(8011)000000006453(90)262301668(91)04442968AA(92)07(93)220222</span
-        ><button>run</button><button>X</button>
-      </div>
-    </div>
+    <h2>History</h2>
+    <div id="history"></div>
     <script src="popup.js"></script>
   </body>
 </html>

@@ -11,6 +11,8 @@ chrome.storage.sync.get(["barcodeHistory"], (res) => {
   }
 });
 
+barcodeInput.focus();
+
 // When the button is clicked, inject setPageBackgroundColor into current page
 barcodeInputButton.addEventListener("click", async (e) => {
   console.log(barcodeInput.value);
@@ -42,29 +44,36 @@ function displayHistory() {
 }
 
 function displayBarcodeItem(barcode) {
-  const div = document.createElement("div");
-  const span = document.createElement("span");
+  const barcodeItem = document.createElement("div");
+  const barcodeLabel = document.createElement("div");
   const runBtn = document.createElement("button");
   const deleteBtn = document.createElement("button");
 
-  span.textContent = barcode;
+  barcodeLabel.className = "barcodeLabel";
+
+  barcodeLabel.textContent = barcode;
   runBtn.textContent = "run";
   deleteBtn.textContent = "delete";
+
+  runBtn.className = "launch-btn";
+  deleteBtn.className = "delete-btn";
 
   runBtn.addEventListener("click", async () => simulateBarCode(barcode));
   deleteBtn.addEventListener("click", () => deleteBarCode(barcode));
 
-  div.appendChild(span);
-  div.appendChild(runBtn);
-  div.appendChild(deleteBtn);
+  barcodeItem.appendChild(barcodeLabel);
+  barcodeItem.appendChild(runBtn);
+  barcodeItem.appendChild(deleteBtn);
+  barcodeItem.className = "barcodeItem";
 
-  return div;
+  return barcodeItem;
 }
 
 function deleteBarCode(barcodeToDelete) {
   barcodeHistory = barcodeHistory.filter(
     (barcode) => barcode !== barcodeToDelete
   );
+  chrome.storage.sync.set({ barcodeHistory });
   displayHistory();
 }
 

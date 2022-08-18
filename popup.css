@@ -1,0 +1,63 @@
+body{
+  background-color: rgb(245, 245, 245);
+  font-family: 'Lato', sans-serif;
+}
+
+button {
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin-left: 1em;
+  height: 3em;
+  -webkit-transition : -webkit-filter 100ms linear,box-shadow 100ms linear;
+  align-items: center;
+}
+
+
+button:hover {
+  filter: brightness(0.9);
+  box-shadow: outset 1px 1px 4px 1px;
+}
+
+.launch-btn {
+  background: darkgreen;
+  display: inline-flex;
+}
+
+.delete-btn {
+  background-color: crimson;
+  display: inline-flex;
+}
+
+textarea {
+  width: 370px;
+  border-radius: 9px;
+  padding: 0.4em;
+  border:1px;
+  box-sizing: border-box;
+}
+
+.inputDiv {
+  align-items: center;
+  display: inline-flex;
+}
+
+
+.barcodeItem{
+  display: flex;
+  margin:0.25em 0;
+  align-items: center;
+}
+
+.barcodeLabel{
+  display: inline-flex;
+  background-color:white;
+  width: 370px;
+  border-radius: 1ch;
+  padding: 1em;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
